@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title> Chyneze Wizpas - The Text Translator Appropriate for No Ages </title>
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" />
+	<!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" media="all" href="{{ STATIC_URL }}css/ie7.css" />
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/jquery.fancybox-1.3.4.css" />
+	</head>
+<body>
+	<div id="container-wrapper">
+		<div id="container">
+			<div id="header">
+				<h1><a href="">Chyneze Wizpas</a></h1>
+				<img src="{{ STATIC_URL }}images/logo.png" alt="Logo" id="logo" />
+				<p>The Text Translator Appropriate for No Ages</p>
+			
+			</div> <!---end-header-->
+		
+			<div id="main">
+				<div id="helloThere">
+					<h2> Welcome </h2>
+					<p> Welcome to Chyneze Wizpas, a website to help you with all your synonym finding needs. Just enter some text in the box on the left, click the translate button, and proceed to bask in the opulent loquaciousness that will be promptly delivered to your adoring eyes. </p>
+                                        <p> Please note, our current agreement with our thesaurus provider allows 10,000 word lookups per day.</p>
+					<p> 	{% if user.is_authenticated %}
+							<a href="dashboard">User Dashboard</a>
+						{% else %}
+							To see your user dashboard please <a href="login">login</a>
+						{% endif %}</p>
+				</div> <!---end-helloThere-->
+				<div id="portofolio">
+					<h2> Translate </h2>
+						<ul>
+							<li><textarea id="sourceText">Um, are you going to do something about that? Because this is an ugly free workplace.</textarea></li>
+							<li id="translatedTextBlock"><p id="translatedText"></p></li>
+                                                        <li id="loaderTextBlock"><img src="{{ STATIC_URL }}images/285.gif" alt="loader" id="loader" /></li>
+						</ul>
+						<button type="button" id="translateButton">Translate!</button> 
+				</div> <!--end-portofolio-->
+			</div> <!--end-main-->
+		</div> <!--end-container-->	
+	</div> <!--end-container-wrapper-->
+	<div id="site"> Copyright &copy; 2012 Tye Wang | CSS by <a href="http://ibrandstudio.com">ibrandstudio</a>
+	</div>
+
+        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.1.7.2.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.fancybox-1.3.4.pack.js"></script>
+	
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			jQuery("a[rel=fancybox-gallery]").fancybox();
+		});
+
+	</script>
+	
+	<!--cufon here-->
+	<script type="text/javascript" src="{{ STATIC_URL }}js/cufon-yui.js"> </script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/lobster.cufonfonts.js"> </script>
+	<script type="text/javascript">
+		Cufon.replace("h1,h2,h3"); 
+	</script>
+	<!--cufon end-->
+	<script type="text/javascript" src="{{ STATIC_URL }}js/translate.js"> </script>
+</body>
+</html>
